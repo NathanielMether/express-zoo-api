@@ -1,5 +1,6 @@
 const express = require('express')
 const ticketsRouter = require('./routes/tickets')
+const animalsRouter = require('./routes/animals')
 
 const server = express()
 
@@ -12,6 +13,7 @@ server.get('/about', (req, res) => {
 })
 
 server.use('/', ticketsRouter)
+server.use('/', animalsRouter)
 
 server.listen(7000, () => {
   console.log('Started at http://localhost:7000')
