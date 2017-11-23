@@ -20,4 +20,23 @@ router.get('/animals/:id', (req, res) => {
   }
 })
 
+router.post('/animals', (req, res) => {
+  const attributes = req.body
+  const newAnimal = Animal.create(attributes)
+  res.status(201).json(newAnimal)
+})
+
+router.delete('/animals/:id', (req, res) => {
+  const id = req.params.id
+  const animal = Animal.destroy(id)
+  res.json({ message: "Animal has been DESTROYED"})
+})
+
+router.post('/animals/:id/update', (req, res) => {
+  const id = req.params.id
+  const attributes = req.body
+  const newAnimal = Animal.update(id, attributes)
+  res.json(newAnimal)
+})
+
 module.exports = router

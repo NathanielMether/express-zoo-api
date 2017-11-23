@@ -5,3 +5,26 @@ GET http://localhost:7000/about
 
 ### 
 GET http://localhost:7000/tickets
+
+###
+
+POST http://localhost:7000/animals
+Content-Type: application/json
+
+{
+  "name": "turtle",
+  "count": 6
+}
+
+###
+
+POST http://localhost:7000/animals/2/update
+Content-Type: application/json
+
+{
+  "count": 8
+}
+
+###
+
+DELETE http://localhost:7000/animals/1
